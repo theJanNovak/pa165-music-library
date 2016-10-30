@@ -1,6 +1,7 @@
 package cz.muni.fi.pa165.entity;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by jan.novak
@@ -18,6 +19,12 @@ public class Album {
 
     @Temporal(TemporalType.DATE)
     private Date releaseDate;
+
+    @OneToMany
+    private List<Song> songs;
+
+    @ManyToOne(optional=false)
+    private RecordCompany recordCompany;
 
     @Lob
     private byte[] albumArt;
@@ -60,5 +67,21 @@ public class Album {
 
     public void setAlbumArt(byte[] albumArt) {
         this.albumArt = albumArt;
+    }
+
+    public RecordCompany getRecordCompany() {
+        return recordCompany;
+    }
+
+    public void setRecordCompany(RecordCompany recordCompany) {
+        this.recordCompany = recordCompany;
+    }
+
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
     }
 }
