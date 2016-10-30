@@ -13,7 +13,7 @@ public interface AlbumDao {
     public void update(Album album);
     public void delete(Album album);
     public Album findById(Long id);
-    public Album findByName(String name);
+    public Album findByTitle(String name);
     public List<Album> findAll();
     public List<Album> findByReleaseDate(Date from, Date to);
 }
