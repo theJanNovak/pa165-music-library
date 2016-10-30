@@ -1,6 +1,7 @@
 package cz.muni.fi.pa165.dao;
 
 import cz.muni.fi.pa165.entity.Album;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -9,6 +10,7 @@ import java.util.List;
 /**
  * Created by xvh on 30.10.2016.
  */
+@Repository
 public class AlbumDaoImpl implements AlbumDao {
     @PersistenceContext
     private EntityManager em;
