@@ -146,18 +146,16 @@ public class SongDaoTest extends AbstractTestNGSpringContextTests {
     }
 
     public static <T> boolean listEquals(List<T> list1, List<T> list2) {
-        int counter = 0;
         if (list1.size() != list2.size()) return false;
         for (T item1 : list1) {
             for (T item2 : list2) {
                 if (item1.equals(item2))
                 {
                     list2.remove(item2);
-                    counter++;
                     break;
                 }
             }
         }
-        return counter == list1.size();
+        return list2.size() == 0;
     }
 }
