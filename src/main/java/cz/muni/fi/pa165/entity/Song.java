@@ -95,7 +95,7 @@ public class Song {
                 ", title='" + title + '\'' +
                 ", bitrate=" + bitrate +
                 ", positionInAlbum=" + positionInAlbum +
-                ", comentatory='" + commentary + '\'' +
+                ", commentary='" + commentary + '\'' +
                 ", genre=" + genre +
                 ", album=" + album +
                 ", musician=" + musician +

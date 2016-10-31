@@ -112,4 +112,17 @@ public class Album {
         result = 31 * result + Arrays.hashCode(albumArt);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Album{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", commentary='" + commentary + '\'' +
+                ", releaseDate=" + releaseDate +
+                ", songs=" + songs +
+                ", recordCompany=" + recordCompany +
+                ", albumArt=" + Arrays.toString(albumArt) +
+                '}';
+    }
 }
