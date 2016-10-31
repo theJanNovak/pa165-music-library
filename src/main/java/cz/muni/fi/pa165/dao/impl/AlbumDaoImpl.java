@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
+ * AlbumDao persistance implementation
  * Created by vit.holasek on 30.10.2016.
  */
 @Repository
