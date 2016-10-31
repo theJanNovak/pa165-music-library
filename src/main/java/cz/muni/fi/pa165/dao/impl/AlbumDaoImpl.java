@@ -35,10 +35,10 @@ public class AlbumDaoImpl implements AlbumDao {
         return em.find(Album.class, id);
     }
 
-    public Album findByTitle(String title) {
+    public List<Album> findByTitle(String title) {
         try {
-            return em.createQuery("select a from Album a where a.title = :title", Album.class)
-                    .setParameter("title", title).getSingleResult();
+            return em.createQuery("select a from Album a where a.title like :title", Album.class)
+                    .setParameter("title", "%"+title+"%").getResultList();
         } catch (NoResultException nrf) {
             return null;
         }
