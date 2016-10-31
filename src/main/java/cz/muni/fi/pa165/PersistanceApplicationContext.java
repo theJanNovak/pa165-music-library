@@ -1,8 +1,9 @@
 package cz.muni.fi.pa165;
 
-import javax.sql.DataSource;
-
-import cz.muni.fi.pa165.dao.SongDao;
+import cz.muni.fi.pa165.dao.AlbumDao;
+import cz.muni.fi.pa165.dao.RecordCompanyDao;
+import cz.muni.fi.pa165.entity.Musician;
+import cz.muni.fi.pa165.entity.Song;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -18,13 +19,15 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
+import javax.sql.DataSource;
+
 /**
  * Created by vit.holasek on 31.10.2016.
  */
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories
-@ComponentScan(basePackageClasses={SongDao.class})
+@ComponentScan(basePackageClasses = {Song.class, AlbumDao.class, RecordCompanyDao.class, Musician.class})
 public class PersistanceApplicationContext {
 
     @Bean

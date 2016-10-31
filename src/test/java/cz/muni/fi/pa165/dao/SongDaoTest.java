@@ -21,18 +21,17 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+import static cz.muni.fi.pa165.TestUtil.listEquals;
+
 /**
  * Created by vit.holasek on 31.10.2016.
  */
-@ContextConfiguration(classes=PersistanceApplicationContext.class)
+@ContextConfiguration(classes = PersistanceApplicationContext.class)
 @TestExecutionListeners(TransactionalTestExecutionListener.class)
 @Transactional
 public class SongDaoTest extends AbstractTestNGSpringContextTests {
     @Autowired
     private SongDao songDao;
-
-    @Autowired
-    private MusicianDao musicianDao;
 
     @PersistenceContext
     private EntityManager em;
@@ -44,8 +43,7 @@ public class SongDaoTest extends AbstractTestNGSpringContextTests {
     private Album album1;
 
     @BeforeMethod
-    public void createData()
-    {
+    public void createData() {
         musician1 = new Musician();
         musician1.setName("Iron Maiden");
         musician1.setWebsite("http://ironmaiden.com/");
@@ -145,17 +143,4 @@ public class SongDaoTest extends AbstractTestNGSpringContextTests {
         Assert.assertTrue(listEquals(list, list1));
     }
 
-    public static <T> boolean listEquals(List<T> list1, List<T> list2) {
-        if (list1.size() != list2.size()) return false;
-        for (T item1 : list1) {
-            for (T item2 : list2) {
-                if (item1.equals(item2))
-                {
-                    list2.remove(item2);
-                    break;
-                }
-            }
-        }
-        return list2.size() == 0;
-    }
 }
