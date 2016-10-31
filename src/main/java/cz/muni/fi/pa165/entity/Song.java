@@ -88,6 +88,22 @@ public class Song {
         this.genre = genre;
     }
 
+    public Album getAlbum() {
+        return album;
+    }
+
+    public void setAlbum(Album album) {
+        this.album = album;
+    }
+
+    public Musician getMusician() {
+        return musician;
+    }
+
+    public void setMusician(Musician musician) {
+        this.musician = musician;
+    }
+
     @Override
     public String toString() {
         return "Song{" +
