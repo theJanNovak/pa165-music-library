@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by xvh on 30.10.2016.
+ * Created by vit.holasek on 30.10.2016.
  */
 public interface AlbumDao {
     public void create(Album album);

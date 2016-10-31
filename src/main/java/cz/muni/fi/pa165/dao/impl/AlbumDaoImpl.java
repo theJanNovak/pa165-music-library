@@ -1,14 +1,18 @@
-package cz.muni.fi.pa165.dao;
+package cz.muni.fi.pa165.dao.impl;
 
+import cz.muni.fi.pa165.dao.AlbumDao;
 import cz.muni.fi.pa165.entity.Album;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.*;
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TemporalType;
 import java.util.Date;
 import java.util.List;
 
 /**
- * Created by xvh on 30.10.2016.
+ * Created by vit.holasek on 30.10.2016.
  */
 @Repository
 public class AlbumDaoImpl implements AlbumDao {

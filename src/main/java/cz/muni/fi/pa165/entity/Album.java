@@ -20,7 +20,7 @@ public class Album {
     @Temporal(TemporalType.DATE)
     private Date releaseDate;
 
-    @OneToMany
+    @OneToMany(mappedBy = "album")
     private List<Song> songs;
 
     @ManyToOne(optional=false)
