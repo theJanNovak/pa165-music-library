@@ -25,7 +25,7 @@ public class Song {
     @Min(1)
     private int positionInAlbum;
 
-    private String comentatory;
+    private String commentary;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
@@ -72,12 +72,12 @@ public class Song {
         this.positionInAlbum = positionInAlbum;
     }
 
-    public String getComentatory() {
-        return comentatory;
+    public String getCommentary() {
+        return commentary;
     }
 
-    public void setComentatory(String comentatory) {
-        this.comentatory = comentatory;
+    public void setCommentary(String comentatory) {
+        this.commentary = comentatory;
     }
 
     public Genre getGenre() {
@@ -95,7 +95,7 @@ public class Song {
                 ", title='" + title + '\'' +
                 ", bitrate=" + bitrate +
                 ", positionInAlbum=" + positionInAlbum +
-                ", comentatory='" + comentatory + '\'' +
+                ", comentatory='" + commentary + '\'' +
                 ", genre=" + genre +
                 ", album=" + album +
                 ", musician=" + musician +

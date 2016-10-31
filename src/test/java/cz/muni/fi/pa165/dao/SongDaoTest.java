@@ -5,6 +5,7 @@ import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import org.springframework.transaction.annotation.Transactional;
+import org.testng.annotations.Test;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -20,4 +21,10 @@ public class SongDaoTest extends AbstractTestNGSpringContextTests {
 
     @PersistenceContext
     private EntityManager em;
+
+    @Test
+    public void create()
+    {
+
+    }
 }
