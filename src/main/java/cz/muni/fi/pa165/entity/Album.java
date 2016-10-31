@@ -25,7 +25,7 @@ public class Album {
     @OneToMany(mappedBy = "album")
     private List<Song> songs = new ArrayList<Song>();
 
-    @ManyToOne(optional=false)
+    @ManyToOne()
     private RecordCompany recordCompany;
 
     @Lob
