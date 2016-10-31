@@ -1,6 +1,7 @@
 package cz.muni.fi.pa165.dao;
 
 import cz.muni.fi.pa165.PersistanceApplicationContext;
+import cz.muni.fi.pa165.entity.Album;
 import cz.muni.fi.pa165.entity.Musician;
 import cz.muni.fi.pa165.entity.Song;
 import cz.muni.fi.pa165.enums.Genre;
@@ -16,6 +17,7 @@ import org.testng.annotations.Test;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -39,6 +41,7 @@ public class SongDaoTest extends AbstractTestNGSpringContextTests {
     private Musician musician2;
     private Song song1;
     private Song song2;
+    private Album album1;
 
     @BeforeMethod
     public void createData()
@@ -53,7 +56,13 @@ public class SongDaoTest extends AbstractTestNGSpringContextTests {
         musician2.setName("Korn");
         musician2.setWebsite("http://www.korn.com/");
         musician2.setCountry("US");
-        em.persist(musician1);
+        em.persist(musician2);
+
+        album1 = new Album();
+        album1.setTitle("Mix");
+        album1.setCommentary("Test");
+        album1.setReleaseDate(new Date());
+        em.persist(album1);
 
         song1 = new Song();
         song1.setBitrate(320);
@@ -61,6 +70,7 @@ public class SongDaoTest extends AbstractTestNGSpringContextTests {
         song1.setPositionInAlbum(2);
         song1.setGenre(Genre.METAL);
         song1.setMusician(musician1);
+        song1.setAlbum(album1);
         songDao.create(song1);
 
         song2 = new Song();
@@ -69,9 +79,8 @@ public class SongDaoTest extends AbstractTestNGSpringContextTests {
         song2.setPositionInAlbum(3);
         song2.setGenre(Genre.METAL);
         song2.setMusician(musician2);
-        songDao.create(song1);
-
-        em.getTransaction().commit();
+        song2.setAlbum(album1);
+        songDao.create(song2);
     }
 
     @Test
@@ -99,8 +108,6 @@ public class SongDaoTest extends AbstractTestNGSpringContextTests {
 
         Song gatheredSong = em.find(Song.class, song1.getId());
         Assert.assertNull(gatheredSong);
-
-        songDao.create(song1);
     }
 
     @Test
