@@ -43,7 +43,7 @@ public class SongDaoImpl implements SongDao {
     }
 
     public List<Song> findAll() {
-        return em.createQuery("select c from Album c", Song.class)
+        return em.createQuery("select s from Song s", Song.class)
                 .getResultList();
     }
 }
