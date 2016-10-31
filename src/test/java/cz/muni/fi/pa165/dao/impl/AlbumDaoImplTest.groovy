@@ -1,6 +1,6 @@
 package cz.muni.fi.pa165.dao.impl
 
-import org.junit.Test
+import org.testng.annotations.Test
 
 /**
  * Created by johnny on 31.10.16.
